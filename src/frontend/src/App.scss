@@ -1,0 +1,51 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+.App-header {
+  .navbar {
+    padding: 0.5rem 0;
+  }
+}
+
+.main-content {
+  padding-top: 5rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+   h2 {
+     font-size: 1.3rem;
+     font-weight: 700;
+     white-space: nowrap;
+  }
+
+  a {
+    color: #333;
+  }
+
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+header {
+  margin-bottom: 1rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+}
+
+nav ul {
+
+  a {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+}
