@@ -5,48 +5,36 @@ import SearchResult from './SearchResult'
 
 interface State {
   query: string,
-  movies: Array<Movie>
 }
 
-class SearchControls extends PureComponent<State, any> {
+interface Props {
+  movies: Array<Movie>
+  fetchMovies: Function
+}
 
-  constructor (props: any) {
+class SearchControls extends PureComponent<Props, State> {
+
+  constructor (props: Props) {
     super(props);
 
     this.state = {
       query: '',
-      movies: []
     };
 
-    this.fetchMovies = this.fetchMovies.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this)
   }
 
-  fetchMovies (query: string) {
-    const url = `/reviews/${query}`;
-
-    axios.get(url)
-      .then((response) => {
-        this.setState({ movies: response.data })
-      })
-      .catch(error => {
-        this.setState({ movies: [] });
-        console.log(error)
-      })
-  };
-
   handleKeyPress(event: any) {
     if (event.key === 'Enter') {
-      this.fetchMovies(this.state.query)
+      this.props.fetchMovies(this.state.query)
     }
   }
 
   resultList () {
-    if (this.state.movies.length) {
       return (
         <div className='results'>
           <ul>
-            {this.state.movies.map((movie: Movie, i: number) => (
+            {this.props.movies.map((movie: Movie, i: number) => (
               <li key={i}>
                 <SearchResult {...movie} />
               </li>
@@ -54,9 +42,6 @@ class SearchControls extends PureComponent<State, any> {
           </ul>
         </div>
       )
-    } else {
-      return null
-    }
   }
 
   render () {
@@ -77,7 +62,7 @@ class SearchControls extends PureComponent<State, any> {
           />
 
           <button type='button' onClick={() => {
-            this.fetchMovies(this.state.query)
+            this.props.fetchMovies(this.state.query)
           }}>Search
           </button>
 

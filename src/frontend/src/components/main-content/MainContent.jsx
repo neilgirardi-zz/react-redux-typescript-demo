@@ -7,7 +7,7 @@ class MainContent extends Component {
     return (
       <Switch>
         <Route exact path='/' render={props => (
-          <Home />
+          <Home {...this.state} {...this.props} />
         )} />
 
       </Switch>

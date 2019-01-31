@@ -3,12 +3,11 @@ import Movie from './../interfaces/Movie'
 
 class SearchResult extends PureComponent<any, any> {
 
-    constructor(props: any) {
+    constructor(props: Movie) {
         super(props)
     }
 
     render() {
-        console.log(this.props);
         const {
             display_title,
             mpaa_rating,
@@ -17,19 +16,25 @@ class SearchResult extends PureComponent<any, any> {
             link
         } = this.props;
 
+        const { url, suggested_link_text } = link;
+
         return (
             <div className='movie'>
                 <h1 className='movie-title'>{ display_title }</h1>
+
                 {mpaa_rating &&
-                <span>MPAA Rating: {mpaa_rating}</span>
+                    <span>MPAA Rating: {mpaa_rating}</span>
                 }
+
                 <h2>{ headline }</h2>
+
                 <p>{ summary_short }</p>
+
                 <p>
-                    <a href={ link.url }
+                    <a href={ url }
                         className='review-link'
                         target='_blank'>
-                        { link.suggested_link_text }
+                        { suggested_link_text }
                     </a>
                 </p>
             </div>

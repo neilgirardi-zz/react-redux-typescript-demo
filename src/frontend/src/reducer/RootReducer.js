@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import home from '../pages/home/reducer'
+import searchReducer from '../components/search/reducer'
 
 export default combineReducers({
-  home
+  movies: searchReducer
 })
