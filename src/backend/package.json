@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/workmarket/fe-coding-challenge__shopping-cart#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "bluebird": "^3.5.3",
     "body-parser": "^1.17.1",
     "cors": "^2.8.1",
     "express": "^4.15.2"

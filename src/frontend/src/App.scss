@@ -21,7 +21,11 @@
   }
 
   a {
-    color: #333;
+    text-decoration: underline;
+  }
+
+  .results, .search-controls, .movie {
+    margin-top: 2rem;
   }
 
 }

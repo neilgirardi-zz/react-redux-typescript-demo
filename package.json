@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "React started kit based on create-react-app",
   "scripts": {
-    "start-server": "node ./src/backend/index.js",
+    "start-server": "nodemon ./src/backend/index.js",
     "start-client": "node ./bin/start-frontend",
     "build-client": "node ./bin/build-frontend",
     "start": "concurrently \"npm run start-server\" \"npm run start-client\"",
@@ -13,7 +13,8 @@
   "author": "Neil Girardi",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "nodemon": "^1.18.9"
   },
   "devDependencies": {
     "concurrently": "^4.1.0"
