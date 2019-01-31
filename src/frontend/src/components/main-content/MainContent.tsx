@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Home from '../../pages/home/Home'
 
-class MainContent extends Component {
+interface Props {
+    status: string
+}
+
+class MainContent extends Component <Props, any> {
   render () {
     return (
       <Switch>

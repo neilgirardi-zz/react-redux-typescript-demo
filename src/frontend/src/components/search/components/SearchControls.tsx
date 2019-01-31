@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
-import axios from 'axios'
-import Movie from '../interfaces/Movie'
+import Movie from '../../../store/types/Movie'
 import SearchResult from './SearchResult'
 
 interface State {

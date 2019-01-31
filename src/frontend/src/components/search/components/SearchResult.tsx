@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import Movie from './../interfaces/Movie'
+import Movie from '../../../store/types/Movie'
 
 class SearchResult extends PureComponent<any, any> {
 

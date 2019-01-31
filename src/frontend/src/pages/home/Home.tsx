@@ -1,7 +1,15 @@
 import React, { Component } from 'react'
 import SearchContainer from '../../components/search/containers/SearchContainer'
 
-class Home extends Component {
+interface Props {
+    status: string
+}
+
+class Home extends Component <Props, any> {
+    constructor (props: Props) {
+        super(props);
+    }
+
   render() {
     return (
       <div className={'container main-content'}>
