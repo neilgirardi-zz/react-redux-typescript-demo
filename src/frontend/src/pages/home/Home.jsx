@@ -6,6 +6,9 @@ class Home extends Component {
     return (
       <div className={'container main-content'}>
         <h1>New York Times Movie Reviews</h1>
+        {this.props.status === 'pending' &&
+          <img src={'http://localhost:3000/spinner.gif'} alt={'loading'} />
+        }
         <SearchContainer {...this.state} {...this.props} />
       </div>
     )
