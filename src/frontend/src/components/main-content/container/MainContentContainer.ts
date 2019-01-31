@@ -3,10 +3,12 @@ import MainContent from '../MainContent'
 import ApplicationState from '../../../store/types/ApplicationState'
 
 const stateToProps = (state: ApplicationState) => {
-  const { ajaxRequestStatus } = state;
+  const { ajaxRequestStatus, uiError } = state;
   const { status } = ajaxRequestStatus;
+  const { errorMessage } = uiError;
   return {
-    status
+    status,
+    errorMessage
   }
 };
 

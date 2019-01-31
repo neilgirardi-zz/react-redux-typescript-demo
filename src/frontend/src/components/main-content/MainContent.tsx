@@ -3,7 +3,8 @@ import { Route, Switch } from 'react-router-dom'
 import Home from '../../pages/home/Home'
 
 interface Props {
-    status: string
+    status: string,
+    errorMessage: string
 }
 
 class MainContent extends Component <Props, any> {
